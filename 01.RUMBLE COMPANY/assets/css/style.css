@@ -23,6 +23,14 @@ body {
     overflow-x: hidden;
 }
 
+.img-fluid-riyaldi {
+    display: none;
+}
+
+.img-fluid {
+    display: block;
+}
+
 
 @media screen and (max-width: 600px) {
 
@@ -56,6 +64,7 @@ body {
 
     p.never-miss {
         text-align: left;
+        margin-bottom: -5px;
     }
 
     input#inputPassword2 {
@@ -65,8 +74,10 @@ body {
         background-color: #eee9e4;
         border: none;
         border: 1.5px solid #3f4b6f;
-
-
+        -webkit-border-radius: ;
+        -moz-border-radius: ;
+        -ms-border-radius: ;
+        -o-border-radius: ;
     }
 
     input.ml-n1 {
@@ -80,12 +91,30 @@ body {
     }
 
     ul.footer3 {
-        float: left;
+        float: right;
     }
 
-    div.card {
-        margin-left: 10%;
+    .mobile-off {
+        display: none;
     }
+
+    .medium-off {
+        display: block !important;
+    }
+
+    .btn-sub,
+    #inputPassword2 {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    /* div.card {
+        margin-left: 10%;
+    } */
 
     button.btn-loadmore {
         width: 100%;
@@ -133,6 +162,10 @@ body {
     width: 25px;
     border-radius: 50%;
     background-color: #eee9e4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .kotak {
@@ -171,7 +204,7 @@ body {
     font-family: 'sansino';
     font-size: 70px;
     color: #ce8069;
-
+    margin-left: -15%;
 }
 
 /* END STYLE JUMBROTON SECTION */
@@ -251,6 +284,15 @@ body {
     font-size: 18px;
     text-decoration: none;
     float: right;
+    text-align: right;
+}
+
+.medium-off {
+    display: none;
+}
+
+.mobile-only-footer ul {
+    padding-inline-start: 0 !important;
 }
 
 .font-footer {
