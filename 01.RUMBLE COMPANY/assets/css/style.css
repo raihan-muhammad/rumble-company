@@ -50,6 +50,10 @@ body {
         display: none;
     }
 
+    .lead4 {
+        margin-left: 0 !important;
+    }
+
     .card1 {
         padding-top: 50px;
     }
