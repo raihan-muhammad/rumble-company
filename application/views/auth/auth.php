@@ -13,6 +13,7 @@
 
 	<!--  CSS -->
 	<link type="text/css" href="<?= base_url('assets/css/argon-dashboard.css') ?>" rel="stylesheet">
+	<link href="<?= base_url('assets/css/sweetalert.css')?>" rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h1 class="card-title text-center">Halaman Login</h5>
-					<form action="" method="POST">
+					<form action="" method="POST" id="loginForm">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
@@ -31,7 +32,7 @@
 											<span class="input-group-text"><i class="ni ni-circle-08"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Username"
-											type="text">
+											type="text" name="username" id="user">
 									</div>
 								</div>
 							</div>
@@ -42,12 +43,12 @@
 											<span class="input-group-text"><i class="ni ni-key-25"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Password"
-											type="password">
+											type="password" name="password" id="pass">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
-								<button class="btn btn-primary w-100" type="submit">LOGIN</button>
+								<button class="btn btn-primary w-100" type="submit" id="btnLogin">LOGIN</button>
 							</div>
 						</div>
 					</form>
@@ -64,5 +65,41 @@
 
 <!--  JS -->
 <script src="<?= base_url('assets/js/argon-dashboard.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/sweetalert.js') ?>"></script>
+
+<script>
+	$(document).ready(function(){
+		$('#btnLogin').click(function(){
+			let username = $('#user').val();
+			let password = $('#pass').val();
+			if(username == '' || password == ''){
+				Swal({
+					title: "Deleted!",
+					text: "Your post has been deleted.",
+					type: "success"
+				});
+			} else {
+				$.ajax({
+					type: "POST",
+					data: {user: username, pass: password},
+					cache: false,
+					url: "<?= site_url('admin') ?>",
+					beforeSend: function(){
+						$('#btnLogin').attr('disabled', 'disabled').html('loading...');
+					},
+					success: function(cekLogin){
+						if(cekLogin!=0){  
+							// On success redirect.  
+							// window.location.replace(cekLogin);  
+							alert('sukses');
+						} else {
+							alert('gagal');
+						}  
+					}
+				});
+			}
+		});
+	});
+</script>
 
 </html>
