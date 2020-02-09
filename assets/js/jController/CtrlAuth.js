@@ -42,12 +42,15 @@ function doLogin() {
         success: function (response) {
             var data = JSON.parse(response);
             if (data.result == 1) {
+                toastr.success('Tunggu anda akan di alihkan ke halaman admin', 'Login Berhasil!')
                 setTimeout(function () {
-                    toastr.info('ok');
                     window.location.href = base_url + data.redirectTo;
                 }, 2000);
             } else {
-                window.location.href = base_url + 'auth';
+                toastr.error('Username atau password salah!', 'Login Gagal!')
+                setTimeout(function () {
+                    window.location.href = base_url + 'auth';
+                }, 2000)
             }
         }
     })

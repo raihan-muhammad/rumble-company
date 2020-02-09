@@ -16,7 +16,7 @@
 	<link href="<?= base_url('assets/css/sweetalert.css')?>" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url('assets/css/toaster.min.css') ?>">
 
-	<script>var base_url = "<?= base_url(); ?>";</script>
+	<script>let base_url = "<?= base_url(); ?>";</script>
 </head>
 
 <body>
@@ -72,7 +72,6 @@
 <script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/jController/CtrlSystem.js') ?>"></script>
 <script>
-	var lang = new langAdmin();
 	<?php
 		if(!empty($scJav)){
 			echo " </script><script src='".base_url('assets/js/jController/'.$scJav['file'])."'></script> ";
@@ -81,43 +80,5 @@
 		}
 	?>
 </script>
-
-
-<!-- 
-<script>
-	$(document).ready(function(){
-		$('#btnLogin').click(function(){
-			let username = $('#user').val();
-			let password = $('#pass').val();
-			if(username == '' || password == ''){
-				Swal.fire({
-					type: 'success',
-					title: 'kosong',
-					text: 'sdsd',
-					timer: 1400
-				})
-			} else {
-				$.ajax({
-					type: "POST",
-					data: {user: username, pass: password},
-					cache: false,
-					url: "<?= site_url('admin') ?>",
-					beforeSend: function(){
-						$('#btnLogin').attr('disabled', 'disabled').html('loading...');
-					},
-					success: function(cekLogin){
-						if(cekLogin!=0){  
-							// On success redirect.  
-							// window.location.replace(cekLogin);  
-							alert('sukses');
-						} else {
-							alert('gagal');
-						}  
-					}
-				});
-			}
-		});
-	});
-</script> -->
 
 </html>
