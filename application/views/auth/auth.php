@@ -14,6 +14,9 @@
 	<!--  CSS -->
 	<link type="text/css" href="<?= base_url('assets/css/argon-dashboard.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/sweetalert.css')?>" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url('assets/css/toaster.min.css') ?>">
+
+	<script>var base_url = "<?= base_url(); ?>";</script>
 </head>
 
 <body>
@@ -66,18 +69,33 @@
 <!--  JS -->
 <script src="<?= base_url('assets/js/argon-dashboard.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/sweetalert.js') ?>"></script>
+<script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/jController/CtrlSystem.js') ?>"></script>
+<script>
+	var lang = new langAdmin();
+	<?php
+		if(!empty($scJav)){
+			echo " </script><script src='".base_url('assets/js/jController/'.$scJav['file'])."'></script> ";
+			echo " <script>".$scJav['controller']."</script>";
+			echo " <script>".$scJav['init']."";
+		}
+	?>
+</script>
 
+
+<!-- 
 <script>
 	$(document).ready(function(){
 		$('#btnLogin').click(function(){
 			let username = $('#user').val();
 			let password = $('#pass').val();
 			if(username == '' || password == ''){
-				Swal({
-					title: "Deleted!",
-					text: "Your post has been deleted.",
-					type: "success"
-				});
+				Swal.fire({
+					type: 'success',
+					title: 'kosong',
+					text: 'sdsd',
+					timer: 1400
+				})
 			} else {
 				$.ajax({
 					type: "POST",
@@ -100,6 +118,6 @@
 			}
 		});
 	});
-</script>
+</script> -->
 
 </html>
