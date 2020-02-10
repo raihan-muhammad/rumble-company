@@ -27,9 +27,8 @@ function initEventListener() {
 
 
 function doLogin() {
-
     $.ajax({
-        url: base_url + "auth/cekLogin",
+        url: `${base_url}auth/cekLogin`,
         type: 'POST',
         data: {
             username: inputUser.value,
@@ -40,7 +39,7 @@ function doLogin() {
             btnLogin.innerHTML = 'Loading...';
         },
         success: function (response) {
-            var data = JSON.parse(response);
+            let data = JSON.parse(response);
             if (data.result == 1) {
                 toastr.success('Tunggu anda akan di alihkan ke halaman admin', 'Login Berhasil!')
                 setTimeout(function () {

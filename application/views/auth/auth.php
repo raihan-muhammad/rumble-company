@@ -35,7 +35,7 @@
 											<span class="input-group-text"><i class="ni ni-circle-08"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Username"
-											type="text" name="username" id="user">
+											type="text" name="user" id="user" required>
 									</div>
 								</div>
 							</div>
@@ -46,7 +46,7 @@
 											<span class="input-group-text"><i class="ni ni-key-25"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Password"
-											type="password" name="password" id="pass">
+											type="password" name="pass" id="pass" required>
 									</div>
 								</div>
 							</div>
@@ -68,7 +68,6 @@
 
 <!--  JS -->
 <script src="<?= base_url('assets/js/argon-dashboard.min.js') ?>"></script>
-<script src="<?= base_url('assets/js/sweetalert.js') ?>"></script>
 <script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/jController/CtrlSystem.js') ?>"></script>
 <script>

@@ -33,17 +33,20 @@ class Auth extends CI_Controller {
 				'status' => 'login'
 			);
 			$this->session->set_userdata($status);
-			$this->session->set_flashdata('status', 'Anda berhasil login!');
-			// echo base_url('dashboard');
-
 			$this->response->send(array(
 				'result' => 1,
-				'redirectTo' => 'auth/admin'
+				'redirectTo' => 'dashboard'
 			));
 		} else {
 			$this->response->send(array(
 				'result' => 0,
 			));
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('auth');
 	}
 }

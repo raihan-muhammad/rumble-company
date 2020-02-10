@@ -55,4 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['auth'] = 'auth';
 $route['admin'] = 'auth/cekLogin';
-$route['auth/admin'] = 'admin/admin';
+$route['logout'] = 'auth/logout';
+$route['dashboard'] = 'admin/admin';
+$route['pengurus'] = 'admin/admin/pengurus';
+$route['ubahProfile'] = 'admin/admin/ubahProfile';
