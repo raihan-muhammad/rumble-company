@@ -14,6 +14,7 @@
   <link href="<?= base_url('assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="<?= base_url('assets/css/argon-dashboard.css') ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/toaster.min.css') ?>">
   <!-- CSS CUSTOM -->
   <style rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>"></style>
   <script>var base_url = "<?= base_url(); ?>";</script>

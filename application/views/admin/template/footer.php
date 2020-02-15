@@ -5,7 +5,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="gantiJudul">Ubah Profile</h5>
+            <h5 class="modal-title" id="gantiJudul">My Profile</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -15,18 +15,8 @@
 				<?php
 					foreach($pengurus as $p):
 				?>
+				<input type="hidden" value="<?= $p->id_admin ?>" id="id">
 				<div class="row" id="editProfile">
-					<div class="col-12">
-						<div class="form-group">
-							<label for=""><small>Nama Admin</small></label>
-							<div class="input-group input-group-alternative mb-4" >
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="ni ni-circle-08"></i></span>
-								</div>
-								<input class="form-control form-control-alternative pl-2" placeholder="Nama Admin" type="text" value="<?= $p->nama ?>" id="namaAdmin" disabled>
-							</div>
-						</div>
-					</div>
 					<div class="col-12">
 						<div class="form-group">
 							<label for=""><small>Username</small></label>
@@ -44,9 +34,9 @@
 						<div class="form-group">
 							<div class="input-group input-group-alternative mb-4">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+									<span class="input-group-text"><i class="ni ni-key-25"></i></span>
 								</div>
-								<input class="form-control form-control-alternative" placeholder="Password Lama" type="text">
+								<input class="form-control form-control-alternative" placeholder="Password Lama" type="password" id="passLama">
 							</div>
 						</div>
 					</div>
@@ -54,9 +44,19 @@
 						<div class="form-group">
 							<div class="input-group input-group-alternative mb-4">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="ni ni-single-02"></i></span>
+									<span class="input-group-text"><i class="ni ni-check-bold"></i></span>
 								</div>
-								<input class="form-control form-control-alternative" placeholder="Password Baru" type="text">
+								<input class="form-control form-control-alternative" placeholder="Password Baru" type="password" id="passBaru">
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="form-group">
+							<div class="input-group input-group-alternative mb-4">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="ni ni-check-bold"></i></span>
+								</div>
+								<input class="form-control form-control-alternative" placeholder="Tulis kembali Password baru" type="password" id="passUlang">
 							</div>
 						</div>
 					</div>
@@ -69,8 +69,9 @@
 				<button type="button" class="btn btn-sm btn-warning" id="batalUbah">Batal</button>
 				<button type="button" class="btn btn-sm btn-warning" id="batalPass">Batal</button>
 				<button type="button" class="btn btn-sm btn-info" id="ubahPass">Ubah Password</button>
-				<button type="button" class="btn btn-sm btn-primary" id="btnUbahProfile">Ubah Profile</button>
-				<button type="submit" class="btn btn-sm btn-primary" id="doUbahProfile">Ubah Profile</button>
+				<button type="submit" class="btn btn-sm btn-primary" id="doUbahProfile">Ubah Username</button>
+				<button type="submit" class="btn btn-sm btn-info" id="doUbahPass">Ubah Password</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnUbahProfile">Ubah Username</button>
 			</div>
 		  </form>
         </div>
@@ -81,7 +82,7 @@
     </div>
   </div>
   <style>
-	  #editPass, #batalUbah, #doUbahProfile, #batalPass {
+	  #editPass, #batalUbah, #doUbahProfile, #batalPass, #doUbahPass {
 		  display: none;
 	  }
   </style>
@@ -91,6 +92,7 @@
   <!--   Argon JS   -->
   <script src="<?= base_url('assets/js/argon-dashboard.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/jController/CtrlSystem.js') ?>"></script>
+  <script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/jController/CtrlTemplate.js') ?>"></script>
   <script>
 	  var controller = new CtrlTemplate();

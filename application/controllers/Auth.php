@@ -27,9 +27,13 @@ class Auth extends CI_Controller {
 		$user = $this->response->post('username');
 		$pass = md5($this->response->post('password'));
 		$cekLogin = $this->model_login->cekLogin($user, $pass);
+		
 		if($cekLogin->num_rows() > 0){
+			$get = $this->db->query("SELECT * FROM tb_admin WHERE username = '$user' ")->row();
+			$id = $get->id_admin;
 			$status = array(
 				'username' => $user,
+				'id' => $id,
 				'status' => 'login'
 			);
 			$this->session->set_userdata($status);

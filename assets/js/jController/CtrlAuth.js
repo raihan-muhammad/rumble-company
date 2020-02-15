@@ -46,10 +46,9 @@ function doLogin() {
                     window.location.href = base_url + data.redirectTo;
                 }, 2000);
             } else {
-                toastr.error('Username atau password salah!', 'Login Gagal!')
-                setTimeout(function () {
-                    window.location.href = base_url + 'auth';
-                }, 2000)
+                toastr.error('Username atau password salah!', 'Login Gagal!');
+                btnLogin.removeAttribute('disabled');
+                btnLogin.innerHTML = 'Login';
             }
         }
     })

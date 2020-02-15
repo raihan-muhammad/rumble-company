@@ -11,6 +11,11 @@
             return $this->db->get_where('tb_admin', $data);
         }
 
+        public function getLogin()
+        {
+            return $this->db->get('tb_admin');
+        }
+
     }
 
 ?>

@@ -59,3 +59,4 @@ $route['logout'] = 'auth/logout';
 $route['dashboard'] = 'admin/admin';
 $route['pengurus'] = 'admin/admin/pengurus';
 $route['ubahProfile'] = 'admin/admin/ubahProfile';
+$route['ubahPassword'] = 'admin/admin/ubahPass';

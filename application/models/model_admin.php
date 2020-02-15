@@ -11,7 +11,7 @@
             return $this->db->get_where('tb_admin', $dimana);
         }
 
-        public function ubahProfile($diubah, $dimana)
+        public function ubahAdmin($diubah, $dimana)
         {
             $this->db->where($dimana);
             $this->db->update('tb_admin', $diubah);

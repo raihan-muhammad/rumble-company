@@ -4,12 +4,16 @@ function CtrlTemplate() {
     let editProfile;
     let editPass;
     let btnUbahProfile;
-    let namaAdmin;
     let userAdmin;
     let gantiJudul;
     let btnBatalUbah;
     let doUbahProfile;
     let batalPass;
+    let idAdmin;
+    let passLama;
+    let passBaru;
+    let passUlang;
+    let doUbahPass;
 }
 
 function init() {
@@ -22,12 +26,16 @@ function initComponent() {
     editProfile = $ge('editProfile');
     editPass = $ge('editPass');
     btnUbahProfile = $ge('btnUbahProfile');
-    namaAdmin = $ge('namaAdmin');
     userAdmin = $ge('userAdmin');
     gantiJudul = $ge('gantiJudul');
     btnBatalUbah = $ge('batalUbah');
     doUbahProfile = $ge('doUbahProfile');
     btnBatalPass = $ge('batalPass');
+    idAdmin = $ge('id');
+    passLama = $ge('passLama');
+    passBaru = $ge('passBaru');
+    passUlang = $ge('passUlang');
+    doUbahPass = $ge('doUbahPass');
 }
 
 function initEventListener() {
@@ -39,13 +47,14 @@ function initEventListener() {
         btnUbahProfile.setAttribute('disabled', 'disabled');
         btnBatalUbah.style.display = 'none';
         btnBatalPass.style.display = 'block';
+        btnEditPass.style.display = 'none';
+        doUbahPass.style.display = 'block';
     });
     btnUbahProfile.addEventListener('click', function () {
-        namaAdmin.removeAttribute('disabled');
-        userAdmin.removeAttribute('disabled');
+        userAdmin.removeAttribute('disabled', 'disabled');
         editProfile.style.display = 'block';
         editPass.style.display = 'none';
-        gantiJudul.innerHTML = 'Ubah Profile';
+        gantiJudul.innerHTML = 'Ubah Username';
         btnUbahProfile.style.display = 'none';
         btnBatalUbah.style.display = 'block';
         btnEditPass.setAttribute('disabled', 'disabled');
@@ -73,16 +82,20 @@ function initEventListener() {
         btnUbahProfile.removeAttribute('disabled');
         gantiJudul.innerHTML = 'Ubah Profile';
     });
-    namaAdmin.addEventListener('keyup', function () {
-        doUbahProfile.classList.remove('btn-primary');
-        doUbahProfile.classList.add('btn-success');
-        doUbahProfile.innerHTML = 'Simpan';
-    });
     userAdmin.addEventListener('keyup', function () {
         doUbahProfile.classList.remove('btn-primary');
         doUbahProfile.classList.add('btn-success');
         doUbahProfile.innerHTML = 'Simpan';
     });
+    passLama.addEventListener('keyup', function () {
+        doUbahPass.classList.remove('btn-info');
+        doUbahPass.classList.add('btn-info');
+        doUbahPass.innerHTML = 'Simpan';
+    });
+    doUbahPass.addEventListener('click', function () {
+        doUbahPassword();
+    });
+
 }
 
 function doUbahProfil() {
@@ -90,27 +103,58 @@ function doUbahProfil() {
         url: `${base_url}ubahProfile`,
         type: 'POST',
         data: {
-            nama: namaAdmin.value,
+            id: idAdmin.value,
             username: userAdmin.value,
         },
         beforeSend: function () {
-            // setTimeout(function () {
-            //     console.log('ok');
-            // }, 2000);
             doUbahProfile.setAttribute('disabled', 'disabled');
             doUbahProfile.innerHTML = 'Loading...';
         },
         success: function (response) {
             let data = JSON.parse(response);
             if (data.result == 1) {
-                toastr.success('Profile berhasil di update', 'Update Berhasil!');
+                toastr.success('Anda akan di alihkan ke halaman login', 'Update Username Berhasil!');
                 setTimeout(function () {
-                    alert('ok');
-                }, 2000)
-            } else {
-                setTimeout(function () {
-                    alert('gagal');
+                    window.location.href = `${base_url}logout`;
                 }, 2000);
+            } else {
+                toastr.error(data.pesan, 'Update Username Gagal!');
+                setTimeout(function () {
+                    doUbahProfile.removeAttribute('disabled');
+                    doUbahProfile.innerHTML = 'Ubah Password';
+                }, 1800);
+            }
+        }
+    });
+}
+
+function doUbahPassword() {
+    $.ajax({
+        url: `${base_url}ubahPassword`,
+        type: 'POST',
+        data: {
+            id: idAdmin.value,
+            passLama: passLama.value,
+            passBaru: passBaru.value,
+            passUlang: passUlang.value
+        },
+        beforeSend: function () {
+            doUbahPass.setAttribute('disabled', 'disabled');
+            doUbahPass.innerHTML = 'Loading...';
+        },
+        success: function (res) {
+            let data = JSON.parse(res);
+            if (data.result == 1) {
+                toastr.success('Anda akan di alihkan ke halaman login', 'Update Password Berhasil');
+                setTimeout(function () {
+                    window.location.href = `${base_url}logout`;
+                }, 2000);
+            } else {
+                toastr.error(data.pesan, 'Update Password Gagal!');
+                setTimeout(function () {
+                    doUbahPass.removeAttribute('disabled');
+                    doUbahPass.innerHTML = 'Ubah Password';
+                }, 1800);
             }
         }
     });
