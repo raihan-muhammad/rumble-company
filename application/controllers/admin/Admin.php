@@ -12,7 +12,6 @@
             $this->load->library('template'); 
             $this->load->library('response'); 
             $this->load->model('model_admin');
-            $this->load->library('form_validation');
         }
 
         public function index()
@@ -20,20 +19,12 @@
             $id = $this->session->userdata('id');
             $user = $this->session->userdata('username');
             $dimana = array('id_admin' => $id);
-            $data['jumlah'] =  $this->model_admin->getAll()->num_rows();
-            $data['pengurus'] =  $this->model_admin->getOne($dimana)->result();
+            $data['jumlah'] =  $this->model_admin->getAll('tb_admin')->num_rows();
+            $data['pengurus'] =  $this->model_admin->getOne('tb_admin', $dimana)->result();
             $this->template->admin('dashboard/dashboard', $data);
         }
         
-        public function pengurus()
-        {
-            $id = $this->session->userdata('id');
-            echo "<script>alert(".$id.")</script>";
-            $user = $this->session->userdata('username');
-            $dimana = array('id_admin' => $id);
-            $data['pengurus'] =  $this->model_admin->getOne($dimana)->result();
-            $this->template->admin('pengurus/index', $data);
-        }
+        
 
         public function ubahProfile()
         {
@@ -43,18 +34,18 @@
             $diubah = array(
                 'username' => $user
             );
-            $cekOne = $this->model_admin->getAll()->row();
+            $cekOne = $this->model_admin->getAll('tb_admin')->row();
             if($user != ""){
-                if($cekOne->username == $user){
+                if($cekOne->username = $user){
                     $this->response->send(array(
                         'result' => 0,
                         'pesan' => 'Username sudah di gunakan'
                     ));
                 } else {
-                    $ubahProfile = $this->model_admin->ubahAdmin($diubah, $dimana);
+                    $ubahProfile = $this->model_admin->ubahAdmin('tb_admin', $diubah, $dimana);
                     $this->response->send(array(
                         'result' => 1,
-                        'pesan' => 'Profile Berhasil di ubah'
+                        'pesan' => 'Username Berhasil di ubah'
                     ));
                 }
             } else {
@@ -72,7 +63,7 @@
             $passUlang = $this->response->post('passUlang');
             $id = $this->response->post('id');
             $dimana = array('password' => $passLama);
-            $cekLama = $this->model_admin->getOne($dimana)->num_rows();
+            $cekLama = $this->model_admin->getOne('tb_admin', $dimana)->num_rows();
             if($passLama != ""){
                 if($passBaru != ""){
                     if($passUlang != ""){
@@ -80,7 +71,7 @@
                             if($cekLama > 0){
                                 $diubah = array('password' => md5($passBaru));
                                 $dimana = array('id_admin' => $id);
-                                $this->model_admin->ubahAdmin($diubah, $dimana);
+                                $this->model_admin->ubahAdmin('tb_admin', $diubah, $dimana);
                                 $this->response->send(array(
                                     'result' => 1
                                 ));

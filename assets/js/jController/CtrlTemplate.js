@@ -14,6 +14,11 @@ function CtrlTemplate() {
     let passBaru;
     let passUlang;
     let doUbahPass;
+    let btnBatalPass;
+    // Declaration Menu sidebar
+    let dashboard;
+    let menuDashboard;
+    let slider;
 }
 
 function init() {
@@ -36,9 +41,27 @@ function initComponent() {
     passBaru = $ge('passBaru');
     passUlang = $ge('passUlang');
     doUbahPass = $ge('doUbahPass');
+    // Declaration Menu Sidebar
+    dashboard = $ge('dashboard');
+    menuDashboard = $ge('menu-dashboard');
+    slider = $ge('slider');
 }
 
 function initEventListener() {
+
+    // Listener For Sidebar
+
+    dashboard.addEventListener('click', function () {
+        dashboard.classList.add('active');
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('click', function () {
+        dashboard.classList.remove('active');
+        slider.classList.add('active');
+    });
+
+    // End Listener For Sidebar
 
     btnEditPass.addEventListener('click', function () {
         editProfile.style.display = 'none';
@@ -58,8 +81,10 @@ function initEventListener() {
         btnUbahProfile.style.display = 'none';
         btnBatalUbah.style.display = 'block';
         btnEditPass.setAttribute('disabled', 'disabled');
+        btnEditPass.style.display = 'block';
         btnUbahProfile.style.display = 'none';
         doUbahProfile.style.display = 'block';
+        doUbahPass.style.display = 'none';
         btnBatalPass.style.display = 'none';
     });
     doUbahProfile.addEventListener('click', function () {
@@ -68,19 +93,21 @@ function initEventListener() {
     btnBatalUbah.addEventListener('click', function () {
         btnUbahProfile.style.display = 'block';
         btnBatalUbah.style.display = 'none';
+        btnEditPass.removeAttribute('disabled', 'disabled');
         doUbahProfile.style.display = 'none';
-        namaAdmin.setAttribute('disabled', 'disabled');
         userAdmin.setAttribute('disabled', 'disabled');
-        btnEditPass.removeAttribute('disabled');
+        doUbahPass.setAttribute('type', 'button');
     });
     btnBatalPass.addEventListener('click', function () {
         editPass.style.display = 'none';
         editProfile.style.display = 'block';
         btnBatalPass.style.display = 'none';
-        namaAdmin.setAttribute('disabled', 'disabled');
         userAdmin.setAttribute('disabled', 'disabled');
         btnUbahProfile.removeAttribute('disabled');
-        gantiJudul.innerHTML = 'Ubah Profile';
+        gantiJudul.innerHTML = 'Ubah Username';
+        doUbahPass.style.display = 'none';
+        btnEditPass.style.display = 'block';
+
     });
     userAdmin.addEventListener('keyup', function () {
         doUbahProfile.classList.remove('btn-primary');
@@ -93,6 +120,7 @@ function initEventListener() {
         doUbahPass.innerHTML = 'Simpan';
     });
     doUbahPass.addEventListener('click', function () {
+        doUbahProfile.setAttribute('type', 'button');
         doUbahPassword();
     });
 
@@ -121,7 +149,9 @@ function doUbahProfil() {
                 toastr.error(data.pesan, 'Update Username Gagal!');
                 setTimeout(function () {
                     doUbahProfile.removeAttribute('disabled');
-                    doUbahProfile.innerHTML = 'Ubah Password';
+                    doUbahProfile.innerHTML = 'Ubah Profile';
+                    doUbahProfile.classList.remove('btn-success');
+                    doUbahProfile.classList.add('btn-primary');
                 }, 1800);
             }
         }

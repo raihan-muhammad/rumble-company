@@ -26,7 +26,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h1 class="card-title text-center">Halaman Login</h5>
-					<form action="" method="POST" id="loginForm">
+					<form action="" method="POST" id="loginForm" autocomplate="off">
 						
 						<div class="row">
 							<div class="col-md-12">
@@ -36,7 +36,7 @@
 											<span class="input-group-text"><i class="ni ni-circle-08"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Username"
-											type="text" name="user" id="user" required>
+											type="text" name="user" id="user" autocomplate="off" required>
 									</div>
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 											<span class="input-group-text"><i class="ni ni-key-25"></i></span>
 										</div>
 										<input class="form-control form-control-alternative" placeholder="Password"
-											type="password" name="pass" id="pass" required>
+											type="password" name="pass" id="pass" autocomplate="off" required>
 									</div>
 								</div>
 							</div>

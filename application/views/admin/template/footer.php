@@ -24,7 +24,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="ni ni-single-02"></i></span>
 								</div>
-								<input class="form-control form-control-alternative pl-2" placeholder="Username" type="text" value="<?= $p->username; ?>" id="userAdmin" disabled>
+								<input class="form-control form-control-alternative pl-2" placeholder="Username" type="text" value="<?= $p->username; ?>" id="userAdmin" autocomplate="off" disabled>
 							</div>
 						</div>
 					</div>
@@ -36,7 +36,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="ni ni-key-25"></i></span>
 								</div>
-								<input class="form-control form-control-alternative" placeholder="Password Lama" type="password" id="passLama">
+								<input class="form-control form-control-alternative" placeholder="Password Lama" type="password" autocomplate="off" id="passLama">
 							</div>
 						</div>
 					</div>
@@ -46,7 +46,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="ni ni-check-bold"></i></span>
 								</div>
-								<input class="form-control form-control-alternative" placeholder="Password Baru" type="password" id="passBaru">
+								<input class="form-control form-control-alternative" placeholder="Password Baru" type="password" autocomplate="off" id="passBaru">
 							</div>
 						</div>
 					</div>
@@ -56,7 +56,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="ni ni-check-bold"></i></span>
 								</div>
-								<input class="form-control form-control-alternative" placeholder="Tulis kembali Password baru" type="password" id="passUlang">
+								<input class="form-control form-control-alternative" placeholder="Tulis kembali Password baru" autocomplate="off" type="password" id="passUlang">
 							</div>
 						</div>
 					</div>
@@ -89,10 +89,10 @@
   <!--   Core   -->
   <script src="<?= base_url('assets/js/plugins/jquery/dist/jquery.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
-  <!--   Argon JS   -->
   <script src="<?= base_url('assets/js/argon-dashboard.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/jController/CtrlSystem.js') ?>"></script>
   <script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
+  <script src="<?= base_url('assets/js/lightbox.js') ?>"></script>
   <script src="<?= base_url('assets/js/jController/CtrlTemplate.js') ?>"></script>
   <script>
 	  var controller = new CtrlTemplate();
