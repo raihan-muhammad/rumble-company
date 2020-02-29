@@ -70,6 +70,11 @@
               <i class="ni ni-album-2 text-primary"></i> Slider
             </a>
           </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('produk') ?>">
+              <i class="ni ni-archive-2 text-primary"></i> Produk
+            </a>
+          </li>
         </ul>
       </div>
     </div>

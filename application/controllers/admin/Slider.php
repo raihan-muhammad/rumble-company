@@ -31,7 +31,7 @@
             $this->data['pengurus'] = $this->model_admin->getOne('tb_admin', $dimana)->result();
             $this->data['slider']   = $this->model_admin->getAll('tb_slider')->result();
             $this->data['jumlah']   = $this->model_admin->getAll('tb_slider')->num_rows();
-            $this->data['update']   = $this->model_admin->getOne('tb_slider', $dimanaGambar)->result();
+
             $this->template->admin('slider/index', $this->data);
         }
 
@@ -63,6 +63,53 @@
             } else {
                 $this->response->send(array('result' => 0, 'pesan' => 'Masukan Nama!'));
             }
+        }
+
+        public function edit($id)
+        {
+            $idAdmin = $this->session->userdata('id');
+            $user = $this->session->userdata('username');
+            $dimana = array('id_admin' => $idAdmin);
+            $dimanaSlider = array('id_slider' => $id);
+            $this->data['pengurus'] = $this->model_admin->getOne('tb_admin', $dimana)->result();
+            $this->data['upSlider'] = $this->model_admin->getOne('tb_slider', $dimanaSlider)->result();
+            $this->template->admin('slider/update', $this->data);
+        }
+
+        public function update()
+        {
+            $id = $this->input->post('id');
+            $nama = $this->input->post('nama');
+            $gambar = $this->input->post('foto');
+            $dimana = array('id_slider' => $id );
+
+            $config['upload_path']      = './assets/img/slider';
+            $config['allowed_types']    = 'jpg|png';
+            $config['max_size']         = '2000';
+            $config['encrypt_name']     = TRUE;
+
+            $this->load->library('upload', $config);
+
+            if(!$this->upload->do_upload('gambar')){     
+                $diubah = array('nama_slider' => $nama, 'gambar_slider' => $gambar);
+                $this->model_admin->update('tb_slider', $diubah, $dimana);
+                $this->session->set_flashdata('update', 'Slider Berhasil di Update');
+                redirect(base_url('admin/slider'));   
+            } else {
+                $upload = $this->upload->data();
+                $diubah = array('nama_slider' => $nama, 'gambar_slider' => $upload['file_name']);
+                $this->model_admin->update('tb_slider', $diubah, $dimana);
+                $this->session->set_flashdata('update', 'Slider Berhasil di Update');
+                redirect(base_url('admin/slider'));
+            }
+        }
+
+        public function delete($id)
+        {
+            $dimana = array('id_slider' => $id);
+            $this->model_admin->delete('tb_slider',$dimana);
+            $this->session->set_flashdata('delete', 'Slider berhasil di delete!');
+            redirect(base_url('admin/slider'));
         }
     }
 

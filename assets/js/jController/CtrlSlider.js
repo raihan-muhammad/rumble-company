@@ -7,6 +7,8 @@ function CtrlSlider() {
     let modalSlider;
     let btnEdit;
     let idSlider;
+    let namaEditSlider;
+    let gambarEditSlider;
 }
 
 function init() {
@@ -22,6 +24,8 @@ function initComponent() {
     modalSlider = $ge('tambahSlider');
     btnEdit = $ge('btnEdit');
     idSlider = $ge('idSlider');
+    namaEditSlider = $ge('namaEditSlider');
+    gambarEditSlider = $ge('gambarEditSlider');
 }
 
 function initEventListener() {
@@ -73,6 +77,17 @@ function tambahSlider(form_data) {
     });
 }
 
-const kirimId = (id) => {
-    alert(id);
-}
+// const kirimId = (id) => {
+//     $.ajax({
+//         url: `${base_url}slider/kirim`,
+//         type: 'POST',
+//         data: {
+//             id: id
+//         },
+//         success: function (res) {
+//             let data = JSON.parse(res);
+//             namaEditSlider.value(data.nama);
+//             gambarEditSlider.value = data.gambar;
+//         }
+//     });
+// }

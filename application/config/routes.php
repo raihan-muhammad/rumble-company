@@ -62,3 +62,7 @@ $route['ubahProfile'] = 'admin/admin/ubahProfile';
 $route['ubahPassword'] = 'admin/admin/ubahPass';
 $route['slider/tambah'] = 'admin/slider/tambah';
 $route['slider/kirim'] = 'admin/slider/index'; 
+$route['produk'] = 'admin/produk';
+$route['produk/tambah'] = 'admin/produk/tambah';
+$route['produk/do/tambah'] = 'admin/produk/doTambah';
+$route['produk/do/update'] = 'admin/produk/doUpdate';

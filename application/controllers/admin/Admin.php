@@ -42,7 +42,7 @@
                         'pesan' => 'Username sudah di gunakan'
                     ));
                 } else {
-                    $ubahProfile = $this->model_admin->ubahAdmin('tb_admin', $diubah, $dimana);
+                    $ubahProfile = $this->model_admin->update('tb_admin', $diubah, $dimana);
                     $this->response->send(array(
                         'result' => 1,
                         'pesan' => 'Username Berhasil di ubah'
@@ -71,7 +71,7 @@
                             if($cekLama > 0){
                                 $diubah = array('password' => md5($passBaru));
                                 $dimana = array('id_admin' => $id);
-                                $this->model_admin->ubahAdmin('tb_admin', $diubah, $dimana);
+                                $this->model_admin->update('tb_admin', $diubah, $dimana);
                                 $this->response->send(array(
                                     'result' => 1
                                 ));

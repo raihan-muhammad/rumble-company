@@ -23,6 +23,35 @@
                     </div>
                 </div>
              -->
+             <?php
+             
+                if($this->session->flashdata('update') == TRUE){ 
+                echo 
+                "
+                    <div class='alert alert-success' role='alert'>
+                        <strong>Success! </strong>".$this->session->flashdata('update')."
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                    </div>  
+                "; 
+                     
+                }
+
+                if($this->session->flashdata('delete') == TRUE){ 
+                echo 
+                "
+                    <div class='alert alert-success' role='alert'>
+                        <strong>Success! </strong>".$this->session->flashdata('delete')."
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                    </div>  
+                "; 
+                     
+                }
+
+             ?>
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
@@ -71,8 +100,8 @@
                                 </a>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#updateSlider" id="btnEdit" data-id="<?= $s->id_slider; ?>">Edit</button>
-                                <button class="btn btn-sm btn-danger">Hapus</button>
+                                <a href="<?= site_url('admin/slider/edit/').$s->id_slider; ?>" class="btn btn-sm btn-success" id="btnEdit" data-id="<?= $s->id_slider; ?>">Edit</a>
+                                <a href="<?= site_url('admin/slider/delete/').$s->id_slider; ?>" onclick="return confirm('Yakin menghapus slider?')" class="btn btn-sm btn-danger">Hapus</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -132,56 +161,5 @@
     </div>
 </div>
 
-<div class="modal fade" id="updateSlider" tabindex="-2" role="dialog" aria-labelledby="tambahSlider" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="tambahSlider">Update Slider</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php foreach($update as $u) : ?>
-            <form action="" id="formSlider" enctype='multipart/form-data'>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for=""><small>Nama Slider</small></label>
-                                <div class="input-group input-group-alternative mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-key-25"></i></span>
-                                    </div>
-                                    <input class="form-control form-control-alternative" value="<?= $u->nama_slider ?>"
-                                        type="text" autocomplate="off" id="namaSlider">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <img src="<?= base_url('assets/img/slider/').$u->gambar_slider ?>" class="img-thumbnail">
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for=""><small>Gambar Slider</small></label>
-                                <div class="input-group input-group-alternative mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-check-bold"></i></span>
-                                    </div>
-                                    <input class="form-control form-control-alternative" type="file" autocomplate="off"
-                                        id="gambarSlider" name="gambar">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-success btn-sm" id="btnTambahSlider">Update</button>
-                </div>
-            </form>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</div>
 
 <!-- END MODAL SECTION -->

@@ -11,7 +11,7 @@
             return $this->db->get_where($table, $dimana);
         }
 
-        public function ubahAdmin($table, $diubah, $dimana)
+        public function update($table, $diubah, $dimana)
         {
             $this->db->where($dimana);
             $this->db->update($table, $diubah);
@@ -20,6 +20,12 @@
         public function tambah($table, $data)
         {
             $this->db->insert($table, $data);
+        }
+
+        public function delete($table, $dimana)
+        {
+            $this->db->where($dimana);
+            $this->db->delete($table);
         }
     }
 
