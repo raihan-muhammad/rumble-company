@@ -75,6 +75,21 @@
               <i class="ni ni-archive-2 text-primary"></i> Produk
             </a>
           </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('portofolio') ?>">
+              <i class="ni ni-collection text-primary"></i> Portofolio
+            </a>
+          </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('client') ?>">
+              <i class="ni ni-building text-primary"></i> Client
+            </a>
+          </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('pelanggan') ?>">
+              <i class="ni ni-badge text-primary"></i> Pelanggan
+            </a>
+          </li>
         </ul>
       </div>
     </div>

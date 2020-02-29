@@ -134,7 +134,7 @@
                                         <span class="input-group-text"><i class="ni ni-key-25"></i></span>
                                     </div>
                                     <input class="form-control form-control-alternative" placeholder="Nama Slider"
-                                        type="text" autocomplate="off" id="namaSlider">
+                                        type="text" autocomplate="off" id="namaSlider" required>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                                         <span class="input-group-text"><i class="ni ni-check-bold"></i></span>
                                     </div>
                                     <input class="form-control form-control-alternative" type="file" autocomplate="off"
-                                        id="gambarSlider" name="gambar">
+                                        id="gambarSlider" name="gambar" required>
                                 </div>
                             </div>
                         </div>

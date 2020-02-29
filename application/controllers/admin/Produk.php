@@ -13,7 +13,6 @@
         public function index()
         {
             $id = $this->session->userdata('id');
-            $user = $this->session->userdata('username');
             $dimana = array('id_admin' => $id);
             $data['pengurus'] = $this->model_admin->getOne('tb_admin', $dimana)->result();
             $data['produk'] = $this->model_admin->getAll('tb_produk')->result();
