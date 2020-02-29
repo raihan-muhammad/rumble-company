@@ -90,6 +90,16 @@
               <i class="ni ni-badge text-primary"></i> Pelanggan
             </a>
           </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('setting') ?>">
+              <i class="ni ni-settings-gear-65 text-primary"></i> Setting Home
+            </a>
+          </li>
+          <li class="nav-item" id="slider">
+            <a class="nav-link " href="<?= site_url('alur') ?>">
+              <i class="ni ni-settings text-primary"></i> Setting Alur
+            </a>
+          </li>
         </ul>
       </div>
     </div>
