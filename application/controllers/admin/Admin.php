@@ -20,6 +20,11 @@
             $user = $this->session->userdata('username');
             $dimana = array('id_admin' => $id);
             $data['jumlah'] =  $this->model_admin->getAll('tb_admin')->num_rows();
+            $data['jumlahSlider'] = $this->model_admin->getAll('tb_slider')->num_rows();
+            $data['jumlahPortofolio'] = $this->model_admin->getAll('tb_portofolio')->num_rows();
+            $data['jumlahProduk'] = $this->model_admin->getAll('tb_produk')->num_rows();
+            $data['jumlahClient'] = $this->model_admin->getAll('tb_client')->num_rows();
+            $data['jumlahPelanggan'] = $this->model_admin->getAll('tb_pelanggan')->num_rows();
             $data['pengurus'] =  $this->model_admin->getOne('tb_admin', $dimana)->result();
             $this->template->admin('dashboard/dashboard', $data);
         }

@@ -19,6 +19,9 @@ function CtrlTemplate() {
     let dashboard;
     let menuDashboard;
     let slider;
+    let usernameAdmin;
+    let passwordAdmin;
+    let btnTambahAdmin;
 }
 
 function init() {
@@ -45,6 +48,10 @@ function initComponent() {
     dashboard = $ge('dashboard');
     menuDashboard = $ge('menu-dashboard');
     slider = $ge('slider');
+
+    usernameAdmin = $ge('usernameAdmin');
+    passwordAdmin = $ge('passwordAdmin');
+    btnTambahAdmin = $ge('tambahAdmin');
 }
 
 function initEventListener() {
@@ -122,6 +129,10 @@ function initEventListener() {
     doUbahPass.addEventListener('click', function () {
         doUbahProfile.setAttribute('type', 'button');
         doUbahPassword();
+    });
+    btnTambahAdmin.addEventListener('click', function () {
+        alert('ok');
+        doAddAdmin();
     });
 
 }

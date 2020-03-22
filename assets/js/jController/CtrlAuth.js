@@ -5,6 +5,9 @@ function CtrlAuth() {
     let btnLogin;
     let inputUser;
     let inputPass;
+    let usernameAdmin;
+    let passwordAdmin;
+    let btnTambahAdmin;
 }
 
 function init() {
@@ -17,12 +20,19 @@ function initComponent() {
     btnLogin = $ge('btnLogin');
     inputUser = $ge('user');
     inputPass = $ge('pass');
+    usernameAdmin = $ge('usernameAdmin');
+    passwordAdmin = $ge('passwordAdmin');
+    btnTambahAdmin = $ge('tambahAdmin');
 }
 
 function initEventListener() {
     btnLogin.addEventListener('click', function () {
         doLogin();
-    })
+    });
+    btnTambahAdmin.addEventListener('click', function () {
+        doAddAdmin();
+        alert('ok');
+    });
 }
 
 

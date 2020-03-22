@@ -65,6 +65,11 @@
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
+          <li class="nav-item" id="dashboard">
+            <a class="nav-link" id="menu-dashboard" href="<?= site_url('admini') ?>">
+              <i class="ni ni-circle-08 text-primary"></i> Admin
+            </a>
+          </li>
           <li class="nav-item" id="slider">
             <a class="nav-link " href="<?= site_url('slider') ?>">
               <i class="ni ni-album-2 text-primary"></i> Slider

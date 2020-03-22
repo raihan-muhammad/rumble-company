@@ -4,7 +4,7 @@
                 <div class="card-header pb-0 border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Gambar Slider</h3>
+                            <h3 class="mb-0">Daftar Portofolio</h3>
                             <a href="<?= site_url('portofolio/tambah') ?>" class="btn btn-sm btn-primary my-3">Tambah</a>
                         </div>
                         <!-- <div class="col-4">

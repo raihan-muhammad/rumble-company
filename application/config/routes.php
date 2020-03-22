@@ -84,3 +84,6 @@ $route['alur/tambah'] = 'admin/alur/tambah';
 $route['alur/do/tambah'] = 'admin/alur/doTambah';
 $route['alur/do/update'] = 'admin/alur/doUpdate';
 $route['alur/warna'] = 'admin/alur/warna';
+$route['admini'] = 'admin/daftarAdmin';
+$route['admin/tambah'] = 'admin/daftarAdmin/tambah';
+$route['admini/do/tambah'] = 'admin/daftarAdmin/doTambah';
