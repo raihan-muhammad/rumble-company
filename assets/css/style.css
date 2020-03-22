@@ -1,0 +1,363 @@
+/* ++++++++++++++++ INSTALL FONT ++++++++++++++++++++++++++++++++++++  */
+
+@font-face {
+    font-family: 'joe';
+    src: url(../fonts/joe.ttf);
+
+}
+
+@font-face {
+    font-family: 'adobe';
+    src: url(../fonts/Adobe\ Garamond\ Pro\ Regular.ttf);
+}
+
+@font-face {
+    font-family: 'sansino';
+    src: url(../fonts/Sansino.ttf);
+}
+
+/* ++++++++++++++++++++++ END FONT INSTALL +++++++++++++++++++++++++ */
+
+body {
+    font-family: 'joe';
+    overflow-x: hidden;
+}
+
+.img-fluid-riyaldi {
+    display: none;
+}
+
+.img-fluid {
+    display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .logo-nav {
+        display: none;
+    }
+
+    li.blog {
+        padding: 0rem 0rem;
+    }
+
+    li.moment {
+        padding: 0rem 0rem;
+    }
+
+    .img-fluid {
+        display: none;
+    }
+
+    .lead4 {
+        margin-left: 0 !important;
+    }
+
+    .card1 {
+        padding-top: 50px;
+    }
+
+    div.top-card-r {
+        top: 5%;
+    }
+
+    .never-responsive {
+        width: 300px;
+    }
+
+    p.never-miss {
+        text-align: left;
+        margin-bottom: -5px;
+    }
+
+    input#inputPassword2 {
+        border-radius: 0;
+        width: 200px;
+        height: 45px;
+        background-color: #eee9e4;
+        border: none;
+        border: 1.5px solid #3f4b6f;
+        -webkit-border-radius: ;
+        -moz-border-radius: ;
+        -ms-border-radius: ;
+        -o-border-radius: ;
+    }
+
+    input.ml-n1 {
+        margin-left: 0rem;
+    }
+
+
+    .btn-sub {
+        width: 40px;
+        height: 45px;
+    }
+
+    ul.footer3 {
+        float: right;
+    }
+
+    .mobile-off {
+        display: none;
+    }
+
+    .medium-off {
+        display: block !important;
+    }
+
+    .btn-sub,
+    #inputPassword2 {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    /* div.card {
+        margin-left: 10%;
+    } */
+
+    button.btn-loadmore {
+        width: 100%;
+        height: 50px;
+
+    }
+
+
+}
+
+/* STYLE NAV SECTION */
+.nav-item {
+    color: #3f4b6f;
+}
+
+.blog {
+    padding: 0rem 3rem;
+}
+
+.moment {
+    padding: 0rem 3rem;
+}
+
+/* END STYLE NAV SECTION */
+
+/* STYLE HEADER SECTION */
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+
+.judul-portofolio {
+    text-align: center;
+    font-family: 'adobe';
+    color: #3f4b6f;
+}
+
+/* END STYLE HEADER SECTION */
+
+/* STYLE SHAPES JUMBOTRON SECTION */
+.circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #eee9e4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.kotak {
+    height: 3px;
+    width: 120px;
+    background-color: #eee9e4;
+    position: relative;
+}
+
+.imgwidth img {
+
+    width: 100%;
+    height: 100%;
+}
+
+/* END STYLE SHAPES SECTION */
+
+/* STYLE JUMBOTRON SECTION */
+.lead1 {
+    color: #eee9e4;
+    text-align: center;
+
+}
+
+.lead2 {
+    font-family: 'adobe';
+    font-size: 25px;
+}
+
+.lead3 {
+    font-family: 'joe';
+
+}
+
+.lead4 {
+    font-family: 'sansino';
+    font-size: 70px;
+    color: #ce8069;
+    margin-left: -15%;
+}
+
+/* END STYLE JUMBROTON SECTION */
+
+/* STYLE CARD SECTION */
+
+.top-card {
+    width: 65%;
+    left: 17%;
+    top: -4%;
+    height: 55px;
+    position: absolute;
+    z-index: 999;
+    background-color: #ce8069;
+}
+
+.top-card-r {
+    width: 65%;
+    left: 17%;
+    top: -4%;
+    height: 55px;
+    position: absolute;
+    z-index: 999;
+    background-color: #ce8069;
+}
+
+.text-card {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.judul-card {
+    position: absolute;
+    z-index: +1;
+    text-align: center;
+    color: white;
+}
+
+.judul-box {
+    height: 50px;
+    width: 220px;
+    background-color: #ce806e;
+    position: absolute;
+    z-index: +1;
+}
+
+/* END STYLE CARD SECTION */
+
+/* STYLE SOSMED SECTION */
+.sosmed {
+    height: 40px;
+    width: 100%;
+    background-color: #3f4b6f;
+}
+
+/* END STYLE SOSMED SECTION */
+
+/* STYLE FOOTER SECTION */
+.footer {
+    width: 100%;
+    background-color: #eee9e4;
+}
+
+.footer1 {
+    list-style-type: none;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer2 {
+    list-style-type: none;
+}
+
+.footer3 {
+    list-style-type: none;
+    font-size: 18px;
+    text-decoration: none;
+    float: right;
+    text-align: right;
+}
+
+.medium-off {
+    display: none;
+}
+
+.mobile-only-footer ul {
+    padding-inline-start: 0 !important;
+}
+
+.font-footer {
+    font-family: 'adobe';
+    font-size: 20px;
+    text-align: center;
+}
+
+.never-miss {
+    text-align: center;
+}
+
+.our-work {
+    text-align: center;
+}
+
+#inputPassword2 {
+    border-radius: 0;
+    width: 400px;
+    height: 45px;
+    background-color: #eee9e4;
+    border: none;
+    border: 1.5px solid #3f4b6f;
+}
+
+
+
+.ml-n1 {
+    margin-left: -5rem;
+}
+
+.btn-sub {
+    width: 200px;
+    height: 45px;
+    background-color: #3f4b6f;
+    border: none;
+    color: #eee9e4;
+    font-family: 'adobe';
+    font-size: 18px;
+
+}
+
+/* END STYLE SOSMED SECTION */
+
+/* STYLE BRANDING SECTION */
+.foto-branding {
+    width: 100%;
+    height: 500px;
+    background-color: #3f4b6f;
+}
+
+.btn-loadmore {
+    width: 500px;
+    height: 50px;
+    background-color: #ffffff;
+    border: none;
+    border: 1.5px solid #3f4b6f;
+    color: #3f4b6f;
+    font-family: 'adobe';
+    font-size: 20px;
+    text-align: center;
+}
+
+/* END STYLE BRANDING SECTION */

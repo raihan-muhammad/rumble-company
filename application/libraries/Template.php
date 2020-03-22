@@ -16,6 +16,14 @@
             $ci->load->view('admin/'.$view, $data);
             $ci->load->view('admin/template/footer', $data);
         }
+
+        function enduser($view=null, $data=null){
+            $ci =& get_instance();
+
+            $ci->load->view('enduser/template/header', $data);
+            $ci->load->view('enduser/'.$view, $data);
+            $ci->load->view('enduser/template/footer', $data);
+        }
     }
 
 ?>
