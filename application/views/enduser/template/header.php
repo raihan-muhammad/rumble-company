@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/owl.carousel.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/owl.theme.default.css')?>">
+    <style>
+        .item{
+            margin: 3px;
+        }
+        .item img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>

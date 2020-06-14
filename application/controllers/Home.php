@@ -4,10 +4,14 @@
         public function __construct(){
             parent::__construct();
             $this->load->library('template');
+            $this->load->model('model_admin');
         }
 
         public function index(){ 
-           $this->template->enduser('home');
+            $data['slider'] = $this->model_admin->getAll('tb_slider');
+            $data['step'] = $this->model_admin->getAll('tb_alur');
+            $data['bg_alur'] = $this->model_admin->getAll('tb_background_alur');
+            $this->template->enduser('home', $data);
         }
     }
 

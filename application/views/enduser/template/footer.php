@@ -1,15 +1,15 @@
 <div class="jumbotron jumbotron-fluid my-auto" style="background-color: #ce8069;">
     <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <h2 class="text-center pb-5" style="color: #eee9e4;">OUR CLIENTS</h2>
+        <h2 class="text-center pb-5" style="color: #eee9e4;">OUR CLIENTS</h2>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="assets/img/logo-rumble.png" style="width: 250px; padding: 20px 30px;" alt="">
             </div>
-            <div class="row">
-                <div class="col-sm text-center">
-                    <img src="assets/img/logo-rumble.png" style="width: 20%;" alt="">
-                    <img src="assets/img/logo-rumble.png" alt="" style="width: 20%;" class="mx-5">
-                    <img src="assets/img/logo-rumble.png" style="width: 20%;" alt="">
-                </div>
+            <div class="item">
+                <img src="assets/img/logo-rumble.png" style="width: 250px; padding: 20px 30px;" alt="">
+            </div>
+            <div class="item">
+                <img src="assets/img/logo-rumble.png" style="width: 250px; padding: 20px 30px;" alt="">
             </div>
         </div>
     </div>
@@ -77,6 +77,7 @@
             <script src="<?= base_url('assets/js/jquery.js') ?>"> </script>
             <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
             <script src="<?= base_url('assets/js/script.js') ?>"></script>
+            <script src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
             <script src="<?= base_url('assets/js/all.js') ?>"></script>
             </body>
 

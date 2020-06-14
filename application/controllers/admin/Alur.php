@@ -66,8 +66,10 @@
         public function warna()
         {
             $warna = $this->input->post('warna');
+            $id = $this->input->post('id_background');
+            $dimana = array('id_background' => $id);
             $data = array('warna' => $warna);
-            $this->model_admin->tambah('tb_background_alur', $data);
+            $this->model_admin->update('tb_background_alur', $data, $dimana);
             $this->session->set_flashdata('update', 'warna berhasil di update');
             redirect(base_url('admin/alur'));
         }

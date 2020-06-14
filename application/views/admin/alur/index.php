@@ -18,6 +18,7 @@
                     <?php foreach($warna as $w) : ?>
                     <form action="<?= site_url('alur/warna') ?>" method="POST">
                         <div class="row mb-2">
+                            <input type="hidden" value="<?= $w->id_background ?>" name="id_background">
                             <div class="col-2">
                                 <input type="color" class="form-control" name="warna" data-toggle="tooltip" data-placement="top" value="#fff" title="Klik untuk memilih warna">
                             </div>

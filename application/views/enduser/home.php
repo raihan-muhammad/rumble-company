@@ -1,19 +1,16 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <?php $no = 0; for($no; $no < 5; $no++): ?>
+        <li data-target="#carouselExampleIndicators" data-slide-to="<?= $no ?>" class="<?php if($no == 0){ echo "active"; } ?>"></li>
+        <?php endfor; ?>
     </ol>
+    
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="assets/img/aa1.png" class="d-block w-100" alt="...">
+        <?php $no = 0; foreach($slider->result() as $s): ?>
+        <div class="carousel-item <?php if($no == 0){ echo "active"; } else { echo "";}?>">
+            <img src="<?= base_url('assets/img/slider/'.$s->gambar_slider) ?>" class="d-block w-100" alt="<?= $s->nama_slider; ?>">
         </div>
-        <div class="carousel-item">
-            <img src="assets/img/aa1.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/aa1.png" class="d-block w-100" alt="...">
-        </div>
+        <?php $no++; endforeach; ?>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -24,45 +21,24 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="jumbotron jumbotron-fluid my-auto" style="background-color: #3f4b6f;">
+<?php foreach($bg_alur->result() as $t): ?>
+<div class="jumbotron jumbotron-fluid my-auto" style="background-color: <?= $t->warna ?>;">
     <div class="container pt-4">
         <div class="row">
+            <?php foreach($step->result() as $a) : ?>
             <div class="col-sm">
                 <div class="circle mx-auto desc"></div>
-                <p class="lead1 pt-4">CHOOSE<br>THE PRODUCT
+                <p class="lead1 pt-4"> <?= $a->nama_alur ?>
                 </p>
             </div>
             <div class="kotak mt-2 mx-auto mb-4">
             </div>
-            <div class="col-sm">
-                <div class="circle mx-auto"></div>
-                <p class="lead1 pt-4">CREATIVE<br>BRIEF
-                </p>
-            </div>
-            <div class="kotak mt-2 mx-auto mb-4">
-            </div>
-            <div class=" col-sm">
-                <div class="circle mx-auto"></div>
-                <p class="lead1 pt-4">DEAL &<br>PAYMENT
-                </p>
-            </div>
-            <div class="kotak mt-2 mx-auto mb-4">
-            </div>
-            <div class=" col-sm">
-                <div class="circle mx-auto"></div>
-                <p class="lead1 pt-4">SKETCH<br>& DESIGN
-                </p>
-            </div>
-            <div class="kotak mt-2 mx-auto mb-4">
-            </div>
-            <div class="col-sm">
-                <div class="circle mx-auto"></div>
-                <p class="lead1 pt-4">DELIVERY
-                </p>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
+<?php endforeach;?>
+
 </div>
 <div class="jumbotron jumbotron-fluid my-auto">
     <div class="container">
